@@ -43,7 +43,7 @@ elif s == 2 or s == 3:
 						out.write(line2.rstrip('\n') + whitespace)
 					else :	
 						if s ==3 :
-							for line2 in f2:	#isos na na kano line2 nextf2 gia na glitwsw to epipleon loop
+							for line2 in f2:
 								start2 = line2.find("<narr>")
 								if start2 == 0: 
 									flag2 = True
@@ -51,6 +51,14 @@ elif s == 2 or s == 3:
 
 								if flag2:
 									if line2.strip():
+										
+										for sym in punct:
+											if line2.find(sym) != -1 :
+												line2 = line2.replace(sym,whitespace)
+
+										if line2.find('&') != -1 :
+											line2 = line2.replace('&',' and ')
+										
 										out.write(line2.rstrip('\n') + whitespace)
 									else:
 										line2 = next(f2)
