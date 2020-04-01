@@ -37,9 +37,9 @@ def punct_rem(line2b):
 	if line2b.find('&') != -1 :
 		line2b = line2b.replace('&',' and ')	
 
-	c = line2b.count('-')
-	if  c > 0 :
-		line2b = dashed(line2b, c)
+	#c = line2b.count('-')
+	#if  c > 0 :
+		#line2b = dashed(line2b, c)
 	line2b = line2b.strip()
 	return line2b		
 
